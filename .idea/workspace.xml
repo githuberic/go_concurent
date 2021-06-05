@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a728c754-4271-4eb1-93d4-c0e22c17a1d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/fanoutin/e1/fanoutin_e1_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/channel/channel_readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goroutine/netcat/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goroutine/netcat/v2/gr_netcat_v2_main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goroutine/netcat3/v2/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goroutine/clock/clock1.md" beforeDir="false" afterPath="$PROJECT_DIR$/goroutine/clock/clock_readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goroutine/netcat2/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/goroutine/netcat/v1/gr_netcat_v1_main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goroutine/reverb/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/goroutine/reverb/reverb_readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goroutine/spinner/spinner.md" beforeDir="false" afterPath="$PROJECT_DIR$/goroutine/spinner/spinner_readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +29,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1tJ5DX4SdUxWJqwecv5mTn4J9SF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,14 +50,49 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/goroutine" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/goroutine" />
+      <recent name="$PROJECT_DIR$/channel" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/goroutine/netcat" />
+      <recent name="$PROJECT_DIR$/goroutine/netcat/v2" />
+      <recent name="$PROJECT_DIR$/goroutine/netcat/v1" />
+      <recent name="$PROJECT_DIR$/goroutine/reverb1/v1" />
+      <recent name="$PROJECT_DIR$/goroutine/clock" />
+    </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestVerify in fanoutin_e1_test.go">
+  <component name="RunManager" selected="Go Build.go build gr_clock1_main.go">
+    <configuration name="go build ch_spinner_v1_main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go_concurent" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/channel/spinner/ch_spinner_v1_main.go" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build gr_clock1_main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go_concurent" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/goroutine/clock1/gr_clock1_main.go" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestVerify in ch_spinner_v1_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_concurent" />
+      <working_directory value="$PROJECT_DIR$/channel/spinner" />
+      <framework value="gotest" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/channel/spinner/ch_spinner_v1_test.go" />
+      <pattern value="^\QTestVerify\E$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestVerify in channel_e1_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
       <working_directory value="$PROJECT_DIR$/channel/e1" />
@@ -49,16 +100,6 @@
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/channel/e1/channel_e1_test.go" />
-      <pattern value="^\QTestVerify\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestVerify in errgroup_e1_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/errgroup/e1" />
-      <framework value="gotest" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/errgroup/e1/errgroup_e1_test.go" />
       <pattern value="^\QTestVerify\E$" />
       <method v="2" />
     </configuration>
@@ -72,33 +113,13 @@
       <pattern value="^\QTestVerify\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerify in go_routine_pool_e1_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/go_routine_pool/e1" />
-      <framework value="gotest" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/go_routine_pool/e1/go_routine_pool_e1_test.go" />
-      <pattern value="^\QTestVerify\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestVerify in semaphore_e1_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/semaphore" />
-      <framework value="gotest" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/semaphore/semaphore_e1_test.go" />
-      <pattern value="^\QTestVerify\E$" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build gr_clock1_main.go" />
+        <item itemvalue="Go Build.go build ch_spinner_v1_main.go" />
+        <item itemvalue="Go Test.TestVerify in ch_spinner_v1_test.go" />
         <item itemvalue="Go Test.TestVerify in fanoutin_e1_test.go" />
         <item itemvalue="Go Test.TestVerify in channel_e1_test.go" />
-        <item itemvalue="Go Test.TestVerify in go_routine_pool_e1_test.go" />
-        <item itemvalue="Go Test.TestVerify in errgroup_e1_test.go" />
-        <item itemvalue="Go Test.TestVerify in semaphore_e1_test.go" />
       </list>
     </recent_temporary>
   </component>
