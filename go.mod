@@ -1,6 +1,6 @@
-module tortoise
+module go_concurent
 
-go 1.14
+go 1.15
 
 require (
 	github.com/marusama/cyclicbarrier v1.1.0
