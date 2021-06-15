@@ -22,3 +22,23 @@ func TestVerifyV3(t *testing.T) {
 	// 执行阻塞，直到所有的需要等待的goroutine数量变成0
 	fmt.Println("over")
 }
+
+func TestVerifyV6(t *testing.T) {
+	ch := make(chan int, 5)
+
+	for i := 0; i < 5; i++ {
+		go func(v int) {
+			ch <- v
+		}(i)
+	}
+
+	go func() {
+		for v := range ch {
+			fmt.Println("Value=", v)
+		}
+	}()
+
+	go func() {
+		fmt.Println("over")
+	}()
+}

@@ -1,12 +1,17 @@
 package practices_test
 
 import (
+	"flag"
 	"go_concurent/channel/pipeline/practices"
 	"testing"
 	"time"
 )
 
-var (
+var defaults practices.Shop
+
+func TestMain(t *testing.M) {
+
+	flag.Parse()
 	defaults = practices.Shop{
 		Verbose:      testing.Verbose(),
 		Cakes:        20,
@@ -15,7 +20,8 @@ var (
 		IceTime:      10 * time.Millisecond,
 		InscribeTime: 10 * time.Millisecond,
 	}
-)
+	t.Run()
+}
 
 func Benchmark(b *testing.B) {
 	// Baseline: one baker, one icer, one inscriber.

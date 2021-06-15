@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a728c754-4271-4eb1-93d4-c0e22c17a1d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/benchmark/bench_v1_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/benchmark/bench_v2_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/channel/pipeline/practices/cake.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/channel/pipeline/practices/cake_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/channel/pipeline/practices/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/benchmark/bench_v3_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel/pipeline/practices/cake_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/channel/pipeline/practices/cake_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sync_waitgroup_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/sync_waitgroup_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +47,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/benchmark" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -68,39 +65,17 @@
       <recent name="$PROJECT_DIR$/channel/pipeline/v1" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.BenchmarkSprintf in go_concurent/benchmark">
-    <configuration name="Benchmark in cake_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build go_concurent/channel/pipeline/v4">
+    <configuration name="go build go_concurent/channel/pipeline/v4" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/channel/pipeline/practices/cake" />
-      <framework value="gobench" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/channel/pipeline/practices/cake/cake_test.go" />
-      <pattern value="^\QBenchmark\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Benchmark in go_concurent/channel/pipeline/practices" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/channel/pipeline/practices" />
-      <framework value="gobench" />
+      <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="go_concurent/channel/pipeline/practices" />
+      <filePath value="$PROJECT_DIR$/channel/pipeline/v4/ch_pipeline_v4_main.go" />
+      <package value="go_concurent/channel/pipeline/v4" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QBenchmark\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="BenchmarkSlowIcingManyIcers in cake_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/channel/pipeline/practices/cake" />
-      <framework value="gobench" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/channel/pipeline/practices/cake/cake_test.go" />
-      <pattern value="^\QBenchmarkSlowIcingManyIcers\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="BenchmarkSprintf in go_concurent/benchmark" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="BenchmarkFib10 in go_concurent/benchmark" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
       <working_directory value="$PROJECT_DIR$/benchmark" />
       <framework value="gobench" />
@@ -108,33 +83,56 @@
       <package value="go_concurent/benchmark" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QBenchmarkSprintf\E$" />
+      <pattern value="^\QBenchmarkFib10\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerifyV5 in channel_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestVerifyMutex in go_concurent" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <kind value="FILE" />
+      <kind value="PACKAGE" />
+      <package value="go_concurent" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/channel_test.go" />
-      <pattern value="^\QTestVerifyV5\E$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestVerifyMutex\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestVerifyV3 in go_concurent" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_concurent" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="go_concurent" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestVerifyV3\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestVerifyV6 in go_concurent" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_concurent" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="go_concurent" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestVerifyV6\E$" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Test.Benchmark in cake_test.go" />
-      <item itemvalue="Go Test.BenchmarkSlowIcingManyIcers in cake_test.go" />
-      <item itemvalue="Go Test.TestVerifyV5 in channel_test.go" />
-      <item itemvalue="Go Test.Benchmark in go_concurent/channel/pipeline/practices" />
-      <item itemvalue="Go Test.BenchmarkSprintf in go_concurent/benchmark" />
+      <item itemvalue="Go Test.TestVerifyV3 in go_concurent" />
+      <item itemvalue="Go Test.TestVerifyMutex in go_concurent" />
+      <item itemvalue="Go Test.BenchmarkFib10 in go_concurent/benchmark" />
+      <item itemvalue="Go Test.TestVerifyV6 in go_concurent" />
+      <item itemvalue="Go Build.go build go_concurent/channel/pipeline/v4" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.BenchmarkSprintf in go_concurent/benchmark" />
-        <item itemvalue="Go Test.Benchmark in go_concurent/channel/pipeline/practices" />
-        <item itemvalue="Go Test.BenchmarkSlowIcingManyIcers in cake_test.go" />
-        <item itemvalue="Go Test.Benchmark in cake_test.go" />
-        <item itemvalue="Go Test.TestVerifyV5 in channel_test.go" />
+        <item itemvalue="Go Build.go build go_concurent/channel/pipeline/v4" />
+        <item itemvalue="Go Test.TestVerifyV6 in go_concurent" />
+        <item itemvalue="Go Test.TestVerifyV3 in go_concurent" />
+        <item itemvalue="Go Test.BenchmarkFib10 in go_concurent/benchmark" />
+        <item itemvalue="Go Test.TestVerifyMutex in go_concurent" />
       </list>
     </recent_temporary>
   </component>
