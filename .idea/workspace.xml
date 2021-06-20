@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a728c754-4271-4eb1-93d4-c0e22c17a1d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/bank/e1/bank.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/bank/e1/bank_e1_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/bank/e2/bank.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/bank/e2/bank_e2_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/bank/e3/bank.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/bank/e3/bank_e3_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/bank/e4/bank.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/bank/e4/bank_e4_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/channel/pipeline/v4/test/ch_pipeline_v4_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/channel_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sync_waitgroup_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/sync_waitgroup_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,26 +46,26 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/benchmark" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/channel/pipeline/v4" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/channel/pipeline/v4" />
       <recent name="$PROJECT_DIR$/benchmark" />
       <recent name="$PROJECT_DIR$/channel/pipeline" />
       <recent name="$PROJECT_DIR$/channel" />
       <recent name="$PROJECT_DIR$/goroutine" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/channel/pipeline/v4/test" />
       <recent name="$PROJECT_DIR$/channel/pipeline/practices" />
       <recent name="$PROJECT_DIR$/channel/pipeline/practices/test" />
       <recent name="$PROJECT_DIR$/channel/pipeline/model" />
       <recent name="$PROJECT_DIR$/channel/pipeline/practices/cake/test" />
-      <recent name="$PROJECT_DIR$/channel/pipeline/v1" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestVerify in go_concurent/example/bank/e3">
+  <component name="RunManager" selected="Go Test.TestVerify in go_concurent/channel/pipeline/v4/test">
     <configuration name="go build go_concurent/channel/pipeline/v4" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
       <working_directory value="$PROJECT_DIR$" />
@@ -80,37 +75,37 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerify in go_concurent/example/bank/e1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestVerify in go_concurent/channel/pipeline/v4" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/example/bank/e1" />
+      <working_directory value="$PROJECT_DIR$/channel/pipeline/v4" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_concurent/example/bank/e1" />
+      <package value="go_concurent/channel/pipeline/v4" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^\QTestVerify\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerify in go_concurent/example/bank/e2" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestVerify in go_concurent/channel/pipeline/v4/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/example/bank/e2" />
+      <working_directory value="$PROJECT_DIR$/channel/pipeline/v4/test" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_concurent/example/bank/e2" />
+      <package value="go_concurent/channel/pipeline/v4/test" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^\QTestVerify\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerify in go_concurent/example/bank/e3" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestVerifyV5 in go_concurent" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/example/bank/e3" />
+      <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_concurent/example/bank/e3" />
+      <package value="go_concurent" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestVerify\E$" />
+      <pattern value="^\QTestVerifyV5\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestVerifyV6 in go_concurent" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -125,19 +120,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build go_concurent/channel/pipeline/v4" />
       <item itemvalue="Go Test.TestVerifyV6 in go_concurent" />
-      <item itemvalue="Go Test.TestVerify in go_concurent/example/bank/e1" />
-      <item itemvalue="Go Test.TestVerify in go_concurent/example/bank/e2" />
-      <item itemvalue="Go Test.TestVerify in go_concurent/example/bank/e3" />
+      <item itemvalue="Go Test.TestVerifyV5 in go_concurent" />
+      <item itemvalue="Go Build.go build go_concurent/channel/pipeline/v4" />
+      <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/v4" />
+      <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/v4/test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestVerify in go_concurent/example/bank/e3" />
-        <item itemvalue="Go Test.TestVerify in go_concurent/example/bank/e2" />
-        <item itemvalue="Go Test.TestVerify in go_concurent/example/bank/e1" />
-        <item itemvalue="Go Test.TestVerifyV6 in go_concurent" />
+        <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/v4/test" />
+        <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/v4" />
         <item itemvalue="Go Build.go build go_concurent/channel/pipeline/v4" />
+        <item itemvalue="Go Test.TestVerifyV5 in go_concurent" />
+        <item itemvalue="Go Test.TestVerifyV6 in go_concurent" />
       </list>
     </recent_temporary>
   </component>

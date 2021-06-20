@@ -28,5 +28,6 @@ func TestVerifyV3(t *testing.T) {
 		}()
 	}
 	wg.Wait()
+
 	fmt.Println(counter.Count)
 }

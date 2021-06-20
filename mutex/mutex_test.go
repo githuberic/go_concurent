@@ -1,22 +1,24 @@
-package go_concurrent
+package mutex
 
 import (
 	"fmt"
 	"sync"
 	"testing"
-	"time"
 )
 
 var num = 0
 func TestVerifyMutex(t *testing.T) {
 	mu := sync.Mutex{}
+	var wg sync.WaitGroup
 	for i := 0; i < 10000; i++ {
+		wg.Add(1)
 		go func() {
 			mu.Lock()
 			defer mu.Unlock()
 			num += 1
+			wg.Done()
 		}()
 	}
-	time.Sleep(time.Second)
-	fmt.Println("num=",num)
+	wg.Wait()
+	fmt.Println("num=", num)
 }
