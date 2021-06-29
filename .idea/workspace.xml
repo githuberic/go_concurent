@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a728c754-4271-4eb1-93d4-c0e22c17a1d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/channel/pipeline/v4/test/ch_pipeline_v4_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/channel_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sync_waitgroup_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/sync_waitgroup_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/semaphore/semaphore_e1_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/semaphore/semaphore_e1_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,81 +56,83 @@
       <recent name="$PROJECT_DIR$/goroutine" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mutex" />
       <recent name="$PROJECT_DIR$/channel/pipeline/v4/test" />
       <recent name="$PROJECT_DIR$/channel/pipeline/practices" />
       <recent name="$PROJECT_DIR$/channel/pipeline/practices/test" />
       <recent name="$PROJECT_DIR$/channel/pipeline/model" />
-      <recent name="$PROJECT_DIR$/channel/pipeline/practices/cake/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestVerify in go_concurent/channel/pipeline/v4/test">
-    <configuration name="go build go_concurent/channel/pipeline/v4" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestVerify in go_concurent/semaphore">
+    <configuration name="TestVerify in go_concurent/semaphore" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/channel/pipeline/v4/ch_pipeline_v4_main.go" />
-      <package value="go_concurent/channel/pipeline/v4" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestVerify in go_concurent/channel/pipeline/v4" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/channel/pipeline/v4" />
+      <working_directory value="$PROJECT_DIR$/semaphore" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_concurent/channel/pipeline/v4" />
+      <package value="go_concurent/semaphore" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^\QTestVerify\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerify in go_concurent/channel/pipeline/v4/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestVerifyV1 in go_concurent/mutex" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/channel/pipeline/v4/test" />
+      <working_directory value="$PROJECT_DIR$/mutex" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_concurent/channel/pipeline/v4/test" />
+      <package value="go_concurent/mutex" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestVerify\E$" />
+      <pattern value="^\QTestVerifyV1\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerifyV5 in go_concurent" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestVerifyV2 in go_concurent/mutex" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$/mutex" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_concurent" />
+      <package value="go_concurent/mutex" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestVerifyV5\E$" />
+      <pattern value="^\QTestVerifyV2\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerifyV6 in go_concurent" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestVerifyV3 in go_concurent/mutex" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$/mutex" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="go_concurent" />
+      <package value="go_concurent/mutex" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestVerifyV6\E$" />
+      <pattern value="^\QTestVerifyV3\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestVerifyV4 in go_concurent/mutex" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_concurent" />
+      <working_directory value="$PROJECT_DIR$/mutex" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="go_concurent/mutex" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestVerifyV4\E$" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Test.TestVerifyV6 in go_concurent" />
-      <item itemvalue="Go Test.TestVerifyV5 in go_concurent" />
-      <item itemvalue="Go Build.go build go_concurent/channel/pipeline/v4" />
-      <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/v4" />
-      <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/v4/test" />
+      <item itemvalue="Go Test.TestVerifyV1 in go_concurent/mutex" />
+      <item itemvalue="Go Test.TestVerifyV2 in go_concurent/mutex" />
+      <item itemvalue="Go Test.TestVerifyV3 in go_concurent/mutex" />
+      <item itemvalue="Go Test.TestVerifyV4 in go_concurent/mutex" />
+      <item itemvalue="Go Test.TestVerify in go_concurent/semaphore" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/v4/test" />
-        <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/v4" />
-        <item itemvalue="Go Build.go build go_concurent/channel/pipeline/v4" />
-        <item itemvalue="Go Test.TestVerifyV5 in go_concurent" />
-        <item itemvalue="Go Test.TestVerifyV6 in go_concurent" />
+        <item itemvalue="Go Test.TestVerify in go_concurent/semaphore" />
+        <item itemvalue="Go Test.TestVerifyV4 in go_concurent/mutex" />
+        <item itemvalue="Go Test.TestVerifyV3 in go_concurent/mutex" />
+        <item itemvalue="Go Test.TestVerifyV2 in go_concurent/mutex" />
+        <item itemvalue="Go Test.TestVerifyV1 in go_concurent/mutex" />
       </list>
     </recent_temporary>
   </component>
@@ -151,5 +151,16 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/rwmutex/e3/rwmutex_e3_test.go</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

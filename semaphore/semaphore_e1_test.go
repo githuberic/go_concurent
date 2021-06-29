@@ -1,4 +1,4 @@
-package semaphore
+package semaphore_test
 
 import (
 	"context"
@@ -38,5 +38,6 @@ func TestVerify(t *testing.T) {
 	if err := sema.Acquire(ctx, int64(maxWorkers)); err != nil {
 		log.Printf("获取所有的worker失败: %v", err)
 	}
+
 	fmt.Println(task)
 }
