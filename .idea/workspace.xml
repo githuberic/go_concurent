@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a728c754-4271-4eb1-93d4-c0e22c17a1d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/example/goroutine_exit/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/channel/pipeline/practices/timeout/timeout_e1_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/go_security/exec1/go_security_exec_one_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/sync_atomic_one_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goroutine/goroutine_e1_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goroutine/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/go_concurent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go_concurent.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +49,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable..is.expanded" value="false" />
     <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
+    <property name="go.formatter.settings.were.checked" value="true" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/channel/pipeline/v4" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -63,78 +73,81 @@
       <recent name="$PROJECT_DIR$/channel/pipeline/practices/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestVerify in go_concurent/example/goroutine_exit/stop_channel">
-    <configuration name="go build go_concurent/example/workerpool" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestVerify in go_concurent/channel/pipeline/practices/timeout">
+    <configuration name="TestVerify in go_concurent/channel/pipeline/practices/timeout" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="go_concurent/example/workerpool" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/example/workerpool/workerpool_v1.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestVerify in go_concurent/example/goroutine_exit/detect_close" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/example/goroutine_exit/detect_close" />
+      <working_directory value="$PROJECT_DIR$/channel/pipeline/practices/timeout" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="go_concurent/example/goroutine_exit/detect_close" />
+      <package value="go_concurent/channel/pipeline/practices/timeout" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <pattern value="^\QTestVerify\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerify in go_concurent/example/goroutine_exit/detect_close/v2" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestVerifyE1 in go_concurent/goroutine" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/example/goroutine_exit/detect_close/v2" />
+      <working_directory value="$PROJECT_DIR$/goroutine" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="go_concurent/example/goroutine_exit/detect_close/v2" />
+      <package value="go_concurent/goroutine" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestVerify\E$" />
+      <pattern value="^\QTestVerifyE1\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerify in go_concurent/example/goroutine_exit/stop_channel" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestVerifyOne in go_concurent/example" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/example/goroutine_exit/stop_channel" />
+      <working_directory value="$PROJECT_DIR$/example" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="go_concurent/example/goroutine_exit/stop_channel" />
+      <package value="go_concurent/example" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestVerify\E$" />
+      <pattern value="^\QTestVerifyOne\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestVerify in go_concurent/example/workerpool" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestVerifyV1 in go_concurent/example/go_security/exec1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/example/workerpool" />
+      <working_directory value="$PROJECT_DIR$/example/go_security/exec1" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="go_concurent/example/workerpool" />
+      <package value="go_concurent/example/go_security/exec1" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestVerify\E$" />
+      <pattern value="^\QTestVerifyV1\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestVerifyV2 in go_concurent/example/go_security/exec1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_concurent" />
+      <working_directory value="$PROJECT_DIR$/example/go_security/exec1" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="go_concurent/example/go_security/exec1" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestVerifyV2\E$" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Test.TestVerify in go_concurent/example/workerpool" />
-      <item itemvalue="Go Build.go build go_concurent/example/workerpool" />
-      <item itemvalue="Go Test.TestVerify in go_concurent/example/goroutine_exit/detect_close" />
-      <item itemvalue="Go Test.TestVerify in go_concurent/example/goroutine_exit/detect_close/v2" />
-      <item itemvalue="Go Test.TestVerify in go_concurent/example/goroutine_exit/stop_channel" />
+      <item itemvalue="Go Test.TestVerifyV1 in go_concurent/example/go_security/exec1" />
+      <item itemvalue="Go Test.TestVerifyV2 in go_concurent/example/go_security/exec1" />
+      <item itemvalue="Go Test.TestVerifyOne in go_concurent/example" />
+      <item itemvalue="Go Test.TestVerifyE1 in go_concurent/goroutine" />
+      <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/practices/timeout" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestVerify in go_concurent/example/goroutine_exit/stop_channel" />
-        <item itemvalue="Go Test.TestVerify in go_concurent/example/goroutine_exit/detect_close/v2" />
-        <item itemvalue="Go Test.TestVerify in go_concurent/example/goroutine_exit/detect_close" />
-        <item itemvalue="Go Build.go build go_concurent/example/workerpool" />
-        <item itemvalue="Go Test.TestVerify in go_concurent/example/workerpool" />
+        <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/practices/timeout" />
+        <item itemvalue="Go Test.TestVerifyE1 in go_concurent/goroutine" />
+        <item itemvalue="Go Test.TestVerifyOne in go_concurent/example" />
+        <item itemvalue="Go Test.TestVerifyV2 in go_concurent/example/go_security/exec1" />
+        <item itemvalue="Go Test.TestVerifyV1 in go_concurent/example/go_security/exec1" />
       </list>
     </recent_temporary>
   </component>
