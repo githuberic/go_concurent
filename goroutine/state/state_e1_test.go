@@ -87,5 +87,4 @@ func TestVerify(t *testing.T) {
 		fmt.Println("ops:", opsFinal)
 	}
 }
-
 // from https://www.kancloud.cn/itfanr/go-by-example/81644
