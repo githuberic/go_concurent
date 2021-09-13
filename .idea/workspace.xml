@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a728c754-4271-4eb1-93d4-c0e22c17a1d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/channel/pipeline/practices/timeout/timeout_e1_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/go_security/exec1/go_security_exec_one_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/sync_atomic_one_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goroutine/goroutine_e1_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/goroutine/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/go_concurent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go_concurent.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goroutine/state/state_e1_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Go File" />
+        <option value="Go Application" />
       </list>
     </option>
   </component>
@@ -43,7 +39,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="DefaultGoTemplateProperty" value="Go Application" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
