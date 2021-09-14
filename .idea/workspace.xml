@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a728c754-4271-4eb1-93d4-c0e22c17a1d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/channel/closechannel/close_e1_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mutex/practices/mutex_e1_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +69,7 @@
       <recent name="$PROJECT_DIR$/channel/pipeline/practices/test" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestVerify in go_concurent/channel/closechannel">
+  <component name="RunManager" selected="Go Test.TestVerify in go_concurent/mutex/practices">
     <configuration name="TestVerify in go_concurent/channel/closechannel" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go_concurent" />
       <working_directory value="$PROJECT_DIR$/channel/closechannel" />
@@ -88,18 +88,6 @@
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
       <package value="go_concurent/channel/pipeline/practices/loop" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestVerify\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestVerify in go_concurent/channel/pipeline/practices/timeout" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go_concurent" />
-      <working_directory value="$PROJECT_DIR$/channel/pipeline/practices/timeout" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="go_concurent/channel/pipeline/practices/timeout" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -130,20 +118,32 @@
       <pattern value="^\QTestVerify\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestVerify in go_concurent/mutex/practices" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go_concurent" />
+      <working_directory value="$PROJECT_DIR$/mutex/practices" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="go_concurent/mutex/practices" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestVerify\E$" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/practices/timeout" />
       <item itemvalue="Go Test.TestVerify in go_concurent/goroutine/state" />
       <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/practices/loop" />
       <item itemvalue="Go Test.TestVerify in go_concurent/channel/workpool" />
       <item itemvalue="Go Test.TestVerify in go_concurent/channel/closechannel" />
+      <item itemvalue="Go Test.TestVerify in go_concurent/mutex/practices" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestVerify in go_concurent/mutex/practices" />
         <item itemvalue="Go Test.TestVerify in go_concurent/channel/closechannel" />
         <item itemvalue="Go Test.TestVerify in go_concurent/channel/workpool" />
         <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/practices/loop" />
         <item itemvalue="Go Test.TestVerify in go_concurent/goroutine/state" />
-        <item itemvalue="Go Test.TestVerify in go_concurent/channel/pipeline/practices/timeout" />
       </list>
     </recent_temporary>
   </component>
