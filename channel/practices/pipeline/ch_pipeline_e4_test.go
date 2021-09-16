@@ -1,8 +1,11 @@
-package main
+package pipeline
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
-func counter(nums ...int) <-chan int {
+func counterV4(nums ...int) <-chan int {
 	out := make(chan int)
 
 	go func() {
@@ -14,7 +17,7 @@ func counter(nums ...int) <-chan int {
 	return out
 }
 
-func squarer(inCh <-chan int) <-chan int {
+func squarerV4(inCh <-chan int) <-chan int {
 	out := make(chan int)
 
 	go func() {
@@ -26,15 +29,15 @@ func squarer(inCh <-chan int) <-chan int {
 	return out
 }
 
-func printer(inCh <-chan int) {
+func printerV4(inCh <-chan int) {
 	for v := range inCh {
 		fmt.Println(v)
 	}
 }
 
-func main() {
-	in := counter(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-	outCh := squarer(in)
+func TestVerifyV4(t *testing.T) {
+	in := counterV4(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+	outCh := squarerV4(in)
 
-	printer(outCh)
+	printerV4(outCh)
 }

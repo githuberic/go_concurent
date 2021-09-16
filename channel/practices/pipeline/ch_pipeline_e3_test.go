@@ -1,11 +1,12 @@
-package main
+package pipeline
 
 import (
 	"fmt"
+	"testing"
 )
 
 func counter(out chan<- int) {
-	for i := 0; i <= 100; i++ {
+	for i := 1; i <= 100; i++ {
 		out <- i
 	}
 	close(out)
@@ -24,7 +25,7 @@ func printer(in <-chan int) {
 	}
 }
 
-func main() {
+func TestVerifyE3(t *testing.T) {
 	naturals := make(chan int)
 	squares := make(chan int)
 

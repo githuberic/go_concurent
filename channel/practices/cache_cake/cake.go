@@ -1,4 +1,4 @@
-package practices
+package cache_cake
 
 import (
 	"fmt"

@@ -1,18 +1,18 @@
-package practices_test
+package cache_cake_test
 
 import (
 	"flag"
-	"go_concurent/channel/pipeline/practices"
+	"go_concurent/channel/practices/cache_cake"
 	"testing"
 	"time"
 )
 
-var defaults practices.Shop
+var defaults cache_cake.Shop
 
 func TestMain(t *testing.M) {
 
 	flag.Parse()
-	defaults = practices.Shop{
+	defaults = cache_cake.Shop{
 		Verbose:      testing.Verbose(),
 		Cakes:        20,
 		BakeTime:     10 * time.Millisecond,
