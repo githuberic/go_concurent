@@ -2,23 +2,24 @@ package _map
 
 import (
 	"log"
+	"strconv"
 	"sync"
 	"testing"
 )
 
 type RWMutexMap struct {
 	sync.RWMutex
-	Map map[int]int
+	Map map[string]interface{}
 }
 
-func (m *RWMutexMap) Get(index int) (int, bool) {
+func (m *RWMutexMap) Get(index string) (interface{}, bool) {
 	m.RLock()
 	defer m.RUnlock()
 	value, ok := m.Map[index]
 	return value, ok
 }
 
-func (m *RWMutexMap) Set(index int, value int) {
+func (m *RWMutexMap) Set(index string, value interface{}) {
 	m.Lock()
 	defer m.Unlock()
 	m.Map[index] = value
@@ -26,16 +27,17 @@ func (m *RWMutexMap) Set(index int, value int) {
 
 func TestVerifyRWMutex(t *testing.T) {
 	var mMap = &RWMutexMap{
-		Map: make(map[int]int),
+		Map: make(map[string]interface{}),
 	}
 
 	for i := 1; i < 1000; i++ {
+		key := strconv.Itoa(i)
 		go func() {
-			mMap.Set(i, i)
+			mMap.Set(key, i)
 		}()
 
 		go func() {
-			value, ok := mMap.Get(i)
+			value, ok := mMap.Get(key)
 			if ok {
 				log.Print(value)
 			}

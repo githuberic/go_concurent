@@ -2,21 +2,23 @@ package _map
 
 import (
 	"log"
+	"strconv"
 	"testing"
 )
 
 func BenchmarkMutexMap(t *testing.B) {
 	var mMap = &MutexMap{
-		Map: make(map[int]int),
+		Map: make(map[string]interface{}),
 	}
 
 	for i := 0; i < 1000; i++ {
+		key := strconv.Itoa(i)
 		go func() {
-			mMap.writeMap(i, i)
+			mMap.writeMap(key, i)
 		}()
 
 		go func() {
-			value, ok := mMap.readMap(i)
+			value, ok := mMap.readMap(key)
 			if ok {
 				log.Print(value)
 			}
@@ -26,16 +28,17 @@ func BenchmarkMutexMap(t *testing.B) {
 
 func BenchmarkRWMutexMap(b *testing.B) {
 	var mMap = &RWMutexMap{
-		Map: make(map[int]int),
+		Map: make(map[string]interface{}),
 	}
 
 	for i := 1; i < 1000; i++ {
+		key := strconv.Itoa(i)
 		go func() {
-			mMap.Set(i, i)
+			mMap.Set(key, i)
 		}()
 
 		go func() {
-			value, ok := mMap.Get(i)
+			value, ok := mMap.Get(key)
 			if ok {
 				log.Print(value)
 			}
