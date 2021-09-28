@@ -11,7 +11,7 @@ type ChannelPoolMap struct {
 	tokens chan chan *int
 }
 
-func NewConcurrentMap() *ChannelPoolMap {
+func NewChannelPoolMap() *ChannelPoolMap {
 	m := &ChannelPoolMap{
 		Map:    make(map[int]int),
 		ch:     make(chan func()),
@@ -65,8 +65,8 @@ func (m *ChannelPoolMap) find(index int) *int {
 	return inf
 }
 
-func TestVerify(t *testing.T) {
-	mMap := NewConcurrentMap()
+func TestVerifyChPoolMap(t *testing.T) {
+	mMap := NewChannelPoolMap()
 
 	for i := 0; i < 1000; i++ {
 		go func() {
