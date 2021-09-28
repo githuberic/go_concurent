@@ -1,18 +1,18 @@
-package v3_1
+package _map
 
 import (
 	"log"
 	"testing"
 )
 
-type ConcurrentMap struct {
+type ChannelPoolMap struct {
 	Map    map[int]int
 	ch     chan func()
 	tokens chan chan *int
 }
 
-func NewConcurrentMap() *ConcurrentMap {
-	m := &ConcurrentMap{
+func NewConcurrentMap() *ChannelPoolMap {
+	m := &ChannelPoolMap{
 		Map:    make(map[int]int),
 		ch:     make(chan func()),
 		tokens: make(chan chan *int, 128),
@@ -31,21 +31,22 @@ func NewConcurrentMap() *ConcurrentMap {
 	return m
 }
 
-func (m *ConcurrentMap) add(index int, value int) {
+func (m *ChannelPoolMap) add(index int, value int) {
 	m.ch <- func() {
 		m.Map[index] = value
 	}
 }
 
-func (m *ConcurrentMap) del(index int) {
+func (m *ChannelPoolMap) del(index int) {
 	m.ch <- func() {
 		delete(m.Map, index)
 	}
 }
 
-func (m *ConcurrentMap) find(index int) *int {
+func (m *ChannelPoolMap) find(index int) *int {
 	// 每次查询都要创建一个信道
 	c := <-m.tokens
+
 	m.ch <- func() {
 		res, ok := m.Map[index]
 		if !ok {
@@ -57,6 +58,7 @@ func (m *ConcurrentMap) find(index int) *int {
 		}
 	}
 	inf := <-c
+
 	// 回收信道
 	m.tokens <- c
 
@@ -77,8 +79,5 @@ func TestVerify(t *testing.T) {
 				log.Print(*value)
 			}
 		}()
-		//go mMap.find(i)
 	}
 }
-
-// https://blog.csdn.net/weixin_34248023/article/details/92487730?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242

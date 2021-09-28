@@ -1,4 +1,4 @@
-package v1_1
+package _map
 
 import (
 	"fmt"
@@ -7,7 +7,26 @@ import (
 	"time"
 )
 
-func TestVerify1(t *testing.T) {
+var mMap map[int]int
+
+func TestVerifyE1(t *testing.T) {
+	mMap = make(map[int]int)
+
+	for i := 0; i < 1000; i++ {
+		go func() {
+			mMap[i] = i
+		}()
+
+		go readMap(i)
+	}
+}
+
+func readMap(index int) int {
+	return mMap[index]
+}
+
+
+func TestVerifyE2(t *testing.T) {
 	m := make(map[string]int)
 
 	go func() {

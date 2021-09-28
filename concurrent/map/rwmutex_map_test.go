@@ -1,4 +1,4 @@
-package v2_1
+package _map
 
 import (
 	"log"
@@ -6,32 +6,30 @@ import (
 	"testing"
 )
 
-type ConcurrentMap struct {
+type RWMutexMap struct {
 	sync.RWMutex
 	Map map[int]int
 }
 
-func (m *ConcurrentMap) Get(index int) (int, bool) {
+func (m *RWMutexMap) Get(index int) (int, bool) {
 	m.RLock()
 	defer m.RUnlock()
 	value, ok := m.Map[index]
 	return value, ok
 }
 
-func (m *ConcurrentMap) Set(index int, value int) {
+func (m *RWMutexMap) Set(index int, value int) {
 	m.Lock()
 	defer m.Unlock()
 	m.Map[index] = value
 }
 
-var mMap *ConcurrentMap
-
-func TestVerify(t *testing.T) {
-	mMap = &ConcurrentMap{
+func TestVerifyRWMutex(t *testing.T) {
+	var mMap = &RWMutexMap{
 		Map: make(map[int]int),
 	}
 
-	for i := 0; i < 1000; i++ {
+	for i := 1; i < 1000; i++ {
 		go func() {
 			mMap.Set(i, i)
 		}()

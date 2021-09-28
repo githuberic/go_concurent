@@ -1,17 +1,17 @@
-package v3
+package _map
 
 import (
 	"log"
 	"testing"
 )
 
-type ConcurrentMap struct {
+type ChannelMap struct {
 	Map map[int]int
 	ch  chan func()
 }
 
-func NewConcurrentMap() *ConcurrentMap {
-	m := &ConcurrentMap{
+func NewChannelMap() *ChannelMap {
+	m := &ChannelMap{
 		Map: make(map[int]int),
 		ch:  make(chan func()),
 	}
@@ -21,22 +21,23 @@ func NewConcurrentMap() *ConcurrentMap {
 			(<-m.ch)()
 		}
 	}()
+
 	return m
 }
 
-func (m *ConcurrentMap) add(index int, value int) {
+func (m *ChannelMap) add(index int, value int) {
 	m.ch <- func() {
 		m.Map[index] = value
 	}
 }
 
-func (m *ConcurrentMap) del(index int) {
+func (m *ChannelMap) del(index int) {
 	m.ch <- func() {
 		delete(m.Map, index)
 	}
 }
 
-func (m *ConcurrentMap) find(index int) (data int) {
+func (m *ChannelMap) find(index int) (data int) {
 	// 每次查询都要创建一个信道
 	m.ch <- func() {
 		if res, ok := m.Map[index]; ok {
@@ -46,8 +47,8 @@ func (m *ConcurrentMap) find(index int) (data int) {
 	return
 }
 
-func TestVerify(t *testing.T) {
-	mMap := NewConcurrentMap()
+func TestVerifyChMap(t *testing.T) {
+	mMap := NewChannelMap()
 
 	for i := 0; i < 1000; i++ {
 		go func() {
@@ -57,9 +58,8 @@ func TestVerify(t *testing.T) {
 		go func() {
 			value := mMap.find(i)
 			if value > 0 {
-				log.Print(value)
+				log.Printf("Value=%d",value)
 			}
 		}()
-		//go mMap.find(i)
 	}
 }
