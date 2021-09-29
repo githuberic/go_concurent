@@ -25,10 +25,7 @@ func factorial(m *sync.RWMutex, n int) int {
 }
 
 func verify() {
-
-	var mu
-
-	
+	var mu sync.RWMutex
 
 	// writer,稍微等待，然后制造一个调用Lock的场景
 	go func() {

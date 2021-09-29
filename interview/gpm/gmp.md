@@ -155,7 +155,9 @@ M的数量和P的数量没有关系。如果当前的M阻塞，P的goroutine会�
 
 ### 调度策略
 调度策略是为了尽可能地复用线程，避免频繁地创建，销毁线程。有2中策略： 
+
 - Work Stealing: 当没有运行的G时，从其他P的队列上获得G 
+
 - Hand Off: 当M阻塞时，将P转移到其他空闲的M。
 
 全局的Goroutine队列，当Work Stealing失败，M可以从这个队列获取G任务。

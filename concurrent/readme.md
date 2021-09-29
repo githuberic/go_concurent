@@ -296,6 +296,11 @@ func TestVerify(t *testing.T) {
 }
 ```
 
+### 解决方案三 利用sync.Map
+```go
+
+```
+
 
 <blockquote>
 mutex/rwmutex的区别，
