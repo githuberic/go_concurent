@@ -1,4 +1,4 @@
-package mutex
+package bad
 
 import (
 	"fmt"
@@ -16,7 +16,7 @@ func TestVerifyV1(t *testing.T) {
 		go func() {
 			defer sg.Done()
 			// 对变量count执行10次加1
-			for j := 0; j < 100000; j++ {
+			for j := 0; j < 10000; j++ {
 				count++
 			}
 		}()
