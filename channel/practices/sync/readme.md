@@ -1,3 +1,6 @@
+## Channel 同步
+
+```go
 package sync
 
 import (
@@ -24,3 +27,14 @@ func TestVerify(t *testing.T) {
 	// 一直阻塞，直到从worker所在协程获得一个worker执行完成的数据
 	<-done
 }
+```
+
+这是一个我们将要在 Go 协程中运行的函数。done 通道将被用于通知其他 Go 协程这个函数已经工作完毕。
+
+发送一个值来通知我们已经完工啦。
+
+运行一个 worker Go协程，并给予用于通知的通道。
+
+程序将在接收到通道中 worker 发出的通知前一直阻塞。
+
+如果你把 <- done 这行代码从程序中移除，程序甚至会在 worker还没开始运行时就结束了。
