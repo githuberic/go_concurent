@@ -21,7 +21,9 @@ func TestVerifyV1(t *testing.T) {
 			}
 		}()
 	}
+
 	// 等待10个goroutine完成
 	sg.Wait()
+
 	fmt.Println(count)
 }

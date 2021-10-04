@@ -7,9 +7,9 @@ import (
 )
 
 func TestVerifyV4(t *testing.T) {
-	var counterV4 CounterV4
+	var counterV4 = &CounterV4{}
 
-	var wg  sync.WaitGroup
+	var wg = &sync.WaitGroup{}
 	wg.Add(10)
 
 	for i := 0; i < 10; i++ {
@@ -25,7 +25,7 @@ func TestVerifyV4(t *testing.T) {
 }
 
 type CounterV4 struct {
-	mu sync.Mutex
+	mu    sync.Mutex
 	count uint64
 }
 

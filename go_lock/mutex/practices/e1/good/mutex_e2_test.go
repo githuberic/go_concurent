@@ -12,9 +12,9 @@ type Counter struct {
 }
 
 func TestVerifyV3(t *testing.T) {
-	var counter Counter
+	var counter = &Counter{}
 
-	var wg sync.WaitGroup
+	var wg = &sync.WaitGroup{}
 	wg.Add(10)
 
 	for i := 0; i < 10; i++ {
