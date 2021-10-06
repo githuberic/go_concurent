@@ -1,4 +1,4 @@
-package practices
+package basic
 
 import (
 	"context"
@@ -27,7 +27,7 @@ func DoTaskE4(ctx context.Context, name string) {
 
 func TestVerifyE5(t *testing.T) {
 	ctx, cancel := context.WithCancel(context.Background())
-	vCtx := context.WithValue(ctx, "options", &Options{2})
+	vCtx := context.WithValue(ctx, "options", &Options{1})
 
 	go DoTaskE4(vCtx,"Work1")
 	go DoTaskE4(vCtx,"Work2")

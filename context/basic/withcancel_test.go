@@ -1,4 +1,4 @@
-package practices
+package basic
 
 import (
 	"context"

@@ -65,11 +65,28 @@ func TestVerifyE2(t *testing.T) {
 ```
 更复杂的场景如何做并发控制呢？比如子协程中开启了新的子协程，或者需要同时控制多个子协程。这种场景下，select+chan的方式就显得力不从心了。
 
+## Context
+Go 标准库的 Context 不仅提供了上下文传递的信息，还提供了 cancel、timeout 等其它信息
+
 Go 语言提供了 Context 标准库可以解决这类场景的问题，Context 的作用和它的名字很像，上下文，即子协程的下上文。Context 有两个主要的功能：
 - 通知子协程退出（正常退出，超时退出等）；
 - 传递必要的参数。
+- 控制子 goroutine 的运行；
+- 超时控制的方法调用；
+- 可以取消的方法调用。
 
-##Context.WithCancel
+### Context方法
+包 context 定义了 Context 接口，Context 的具体实现包括 4 个方法，分别是 Deadline、Done、Err 和 Value，如下所示：
+```go
+type Context interface {
+    Deadline() (deadline time.Time, ok bool)
+    Done() <-chan struct{}
+    Err() error
+    Value(key interface{}) interface{}
+}
+```
+
+### Context.WithCancel
 context.WithCancel() 创建可取消的 Context 对象，即可以主动通知子协程退出。
 
 ###控制单个协程
@@ -263,3 +280,42 @@ func TestVerifyE7(t *testing.T) {
 ```
 - WithDeadline 用于设置截止时间。在这个例子中，将截止时间设置为1s后，cancel() 函数在 3s 后调用，因此子协程将在调用 cancel() 函数前结束。
 - 在子协程中，可以通过 ctx.Err() 获取到子协程退出的错误原因。
+
+### 总结
+我们经常使用 Context 来取消一个 goroutine 的运行，这是 Context 最常用的场景之一，Context 也被称为 goroutine 生命周期范围（goroutine-scoped）的 Context，
+
+把 Context 传递给 goroutine。但是，goroutine 需要尝试检查 Context 的 Done 是否关闭了：
+
+```go
+
+func main() {
+    ctx, cancel := context.WithCancel(context.Background())
+
+    go func() {
+        defer func() {
+            fmt.Println("goroutine exit")
+        }()
+
+        for {
+            select {
+            case <-ctx.Done():
+                return
+            default:
+                time.Sleep(time.Second)
+            }
+        }
+    }()
+
+    time.Sleep(time.Second)
+    cancel()
+    time.Sleep(2 * time.Second)
+}
+```
+
+所以，有时候，Context 并不会减少对服务器的请求负担。
+
+如果在 Context 被 cancel 的时候，你能关闭和服务器的连接，中断和数据库服务器的通讯、停止对本地文件的读写，
+
+那么，这样的超时处理，同时能减少对服务调用的压力，但是这依赖于你对超时的底层处理机制。
+
+![context总结](./img/context_01.jpg)

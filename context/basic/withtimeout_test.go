@@ -1,4 +1,4 @@
-package practices
+package basic
 
 import (
 	"context"
@@ -7,11 +7,11 @@ import (
 	"time"
 )
 
-func doTaskE6(ctx context.Context, name string) {
+func doTaskE5(ctx context.Context, name string) {
 	for {
 		select {
 		case <-ctx.Done():
-			fmt.Println("stop", name, ctx.Err())
+			fmt.Println("stop", name)
 			return
 		default:
 			fmt.Println(name, "send request")
@@ -20,10 +20,10 @@ func doTaskE6(ctx context.Context, name string) {
 	}
 }
 
-func TestVerifyE7(t *testing.T) {
-	ctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(1*time.Second))
-	go doTaskE6(ctx, "worker1")
-	go doTaskE6(ctx, "worker2")
+func TestVerifyE6(t *testing.T) {
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
+	go doTaskE5(ctx, "worker1")
+	go doTaskE5(ctx, "worker2")
 	time.Sleep(3 * time.Second)
 	fmt.Println("before cancel")
 	cancel()
