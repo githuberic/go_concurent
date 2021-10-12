@@ -1,4 +1,4 @@
-package semaphore_test
+package basic_test
 
 import (
 	"context"
