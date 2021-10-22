@@ -2,6 +2,7 @@ package _map
 
 import (
 	"sync"
+	"github.com/orcaman/concurrent-map"
 )
 
 var SHARD_COUNT = 32
