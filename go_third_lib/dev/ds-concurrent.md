@@ -18,3 +18,10 @@ B-tree implementation for Go
 
 https://github.com/amit-davidson/btree
 
+## golang-set
+
+A simple set type for the Go language. Trusted by Docker, 1Password, Ethereum and Hashicorp.
+
+https://github.com/deckarep/golang-set
+
+
