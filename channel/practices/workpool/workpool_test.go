@@ -3,7 +3,6 @@ package workpool
 import (
 	"fmt"
 	"testing"
-	"time"
 )
 
 // 我们将在worker函数里面运行几个并行实例，这个函数从jobs通道
@@ -12,7 +11,6 @@ import (
 func worker(id int, jobs <-chan int, result chan<- int) {
 	for j := range jobs {
 		fmt.Println("Worker", id, ",processing job", j)
-		time.Sleep(time.Second * 1)
 		result <- j * 2
 	}
 }
