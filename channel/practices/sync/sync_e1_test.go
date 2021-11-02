@@ -5,6 +5,7 @@ import (
 	"testing"
 	"time"
 )
+
 // 这个worker函数将以协程的方式运行
 // 通道`done`被用来通知另外一个协程这个worker函数已经执行完成
 func worker(done chan bool) {

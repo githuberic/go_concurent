@@ -3,7 +3,6 @@ package selection
 import (
 	"fmt"
 	"testing"
-	"time"
 )
 
 func TestVerify(t *testing.T) {
@@ -13,12 +12,12 @@ func TestVerify(t *testing.T) {
 
 	// 为了模拟并行协程的阻塞操作，我们让每个通道在一段时间后再写入一个值
 	go func() {
-		time.Sleep(time.Second * 1)
+		//time.Sleep(time.Second * 1)
 		ch1 <- "one"
 	}()
 
 	go func() {
-		time.Sleep(time.Second * 1)
+		//time.Sleep(time.Second * 1)
 		ch2 <- "two"
 	}()
 
