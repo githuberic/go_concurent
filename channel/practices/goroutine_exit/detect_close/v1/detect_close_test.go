@@ -1,4 +1,4 @@
-package detect_close
+package v1
 
 import (
 	"fmt"
@@ -18,6 +18,7 @@ func producer(arr []interface{}) <-chan interface{} {
 		for _, v := range arr {
 			fmt.Printf("send %d\n", v)
 			out <- v
+			time.Sleep(time.Millisecond)
 		}
 	}()
 	return out
@@ -26,9 +27,6 @@ func producer(arr []interface{}) <-chan interface{} {
 func consumer(in <-chan interface{}) <-chan struct{} {
 	done := make(chan struct{})
 
-	processedCount := 0
-	t := time.NewTicker(time.Millisecond * 500)
-
 	go func() {
 		defer func() {
 			fmt.Println("consumer exit")
@@ -36,17 +34,8 @@ func consumer(in <-chan interface{}) <-chan struct{} {
 			close(done)
 		}()
 
-		for {
-			select {
-			case v, ok := <-in:
-				if !ok {
-					return
-				}
-				fmt.Printf("Processing %d\n", v)
-				processedCount++
-			case <-t.C:
-				fmt.Printf("Processing, processedCnt = %d\n", processedCount)
-			}
+		for v := range in{
+			fmt.Printf("Processing %d\n",v)
 		}
 	}()
 	return done
@@ -55,7 +44,6 @@ func consumer(in <-chan interface{}) <-chan struct{} {
 func TestDetectClose(t *testing.T) {
 	arr := []interface{}{3, 4, 5, 6, 8, 9}
 	out := producer(arr)
-
 	done := consumer(out)
 	<-done
 	fmt.Println("Main exit")
