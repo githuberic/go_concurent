@@ -6,12 +6,12 @@ import (
 	"testing"
 )
 
-func producer(nums ...int) <-chan int {
+func producer(numbs ...int) <-chan int {
 	out := make(chan int)
 
 	go func() {
 		defer close(out)
-		for _, v := range nums {
+		for _, v := range numbs {
 			out <- v
 		}
 	}()
@@ -19,7 +19,7 @@ func producer(nums ...int) <-chan int {
 	return out
 }
 
-func sequare(inCh <-chan int) <-chan int {
+func square(inCh <-chan int) <-chan int {
 	out := make(chan int)
 
 	go func() {
@@ -28,6 +28,7 @@ func sequare(inCh <-chan int) <-chan int {
 			out <- v * v
 		}
 	}()
+
 	return out
 }
 
@@ -44,15 +45,16 @@ func merge(cs ...<-chan int) <-chan int {
 		}
 	}
 
+	// FAN-IN
 	for _, v := range cs {
 		go collect(v)
 	}
 
+	// 错误方式：直接等待是bug，死锁，因为merge写了out，main却没有读
 	/*
-	错误方式：直接等待是bug，死锁，因为merge写了out，main却没有读
 	wg.Wait()
 	close(out)
-	 */
+	*/
 
 	go func() {
 		wg.Wait()
@@ -65,9 +67,9 @@ func merge(cs ...<-chan int) <-chan int {
 func TestVerify(t *testing.T) {
 	in := producer(1, 2, 3, 4)
 
-	c1 := sequare(in)
-	c2 := sequare(in)
-	c3 := sequare(in)
+	c1 := square(in)
+	c2 := square(in)
+	c3 := square(in)
 
 	for ret := range merge(c1, c2, c3) {
 		fmt.Printf("%3d",ret)

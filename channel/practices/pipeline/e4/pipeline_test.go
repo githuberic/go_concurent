@@ -1,23 +1,23 @@
-package pipeline
+package e4
 
 import (
 	"fmt"
 	"testing"
 )
 
-func counterV4(nums ...int) <-chan int {
+func counter(numbs ...int) <-chan int {
 	out := make(chan int)
 
 	go func() {
 		defer close(out)
-		for _, v := range nums {
+		for _, v := range numbs {
 			out <- v
 		}
 	}()
 	return out
 }
 
-func squarerV4(inCh <-chan int) <-chan int {
+func squarer(inCh <-chan int) <-chan int {
 	out := make(chan int)
 
 	go func() {
@@ -29,15 +29,15 @@ func squarerV4(inCh <-chan int) <-chan int {
 	return out
 }
 
-func printerV4(inCh <-chan int) {
+func printer(inCh <-chan int) {
 	for v := range inCh {
 		fmt.Println(v)
 	}
 }
 
 func TestVerifyV4(t *testing.T) {
-	in := counterV4(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-	outCh := squarerV4(in)
+	in := counter(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+	outCh := squarer(in)
 
-	printerV4(outCh)
+	printer(outCh)
 }

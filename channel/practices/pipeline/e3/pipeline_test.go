@@ -1,4 +1,4 @@
-package pipeline
+package e3
 
 import (
 	"fmt"

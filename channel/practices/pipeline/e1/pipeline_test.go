@@ -1,4 +1,4 @@
-package pipeline
+package e1
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 /**
 all goroutines are asleep - deadlock!
 */
-func TestVerifyV2(t *testing.T) {
+func TestVerify(t *testing.T) {
 	naturals := make(chan int)
 	squares := make(chan int)
 
@@ -21,7 +21,6 @@ func TestVerifyV2(t *testing.T) {
 
 	go func() {
 		defer close(squares)
-		// 通过range循环语法在通道上迭代
 		for x := range naturals {
 			squares <- x * x
 		}
@@ -31,7 +30,7 @@ func TestVerifyV2(t *testing.T) {
 	// 但是其他goroutine线都已经执行完了(all goroutines are asleep)
 	// 那么就永远不会有数据放入管道。所以，main goroutine线在等一个永远不会来的数据，
 	// 那整个程序就永远等下去了，所以程序down掉。
-	for x := range squares {
-		fmt.Println(x)
+	for v := range squares {
+		fmt.Println(v)
 	}
 }
