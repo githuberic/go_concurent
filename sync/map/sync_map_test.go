@@ -1,4 +1,4 @@
-package v1
+package _map
 
 import (
 	"log"
@@ -10,11 +10,12 @@ func TestVerify(T *testing.T) {
 	var m sync.Map
 
 	// 1. 写入
-	m.Store("qcrao", 18)
-	m.Store("stefno", 20)
+	m.Store("lgq", 18)
+	m.Store("ldx", 20)
+	m.Store("lyy", 20)
 
 	// 2. 读取
-	age, _ := m.Load("qcrao")
+	age, _ := m.Load("lgq")
 	log.Print(age.(int))
 
 	// 3. 遍历
@@ -26,13 +27,13 @@ func TestVerify(T *testing.T) {
 	})
 
 	// 4. 删除
-	m.Delete("qcrao")
-	age, ok := m.Load("qcrao")
+	m.Delete("lyy")
+	age, ok := m.Load("lgq")
 	log.Println(age,ok)
 
 	// 5. 读取或写入
-	m.LoadOrStore("stefno",99)
-	age, _ = m.Load("stefno")
+	m.LoadOrStore("ldx",99)
+	age, _ = m.Load("ldx")
 	log.Println(age)
 }
 

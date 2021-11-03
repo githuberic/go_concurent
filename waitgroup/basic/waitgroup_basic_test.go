@@ -1,8 +1,9 @@
-package main
+package t_test
 
 import (
 	"fmt"
 	"sync"
+	"testing"
 	"time"
 )
 
@@ -35,7 +36,7 @@ func worker(c *Counter, wg *sync.WaitGroup) {
 	c.Incr()
 }
 
-func main() {
+func TestWaitGroupBasic(t *testing.T) {
 	var counter Counter
 
 	var wg sync.WaitGroup
@@ -46,6 +47,7 @@ func main() {
 	}
 	// 检查点，等待goroutine都完成任务
 	wg.Wait()
+
 	// 输出当前计数器的值
 	fmt.Println(counter.Count())
 }

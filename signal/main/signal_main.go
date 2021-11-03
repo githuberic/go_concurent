@@ -19,7 +19,6 @@ func main() {
 	// 输出该信号，然后通知程序可以结束了
 	go func() {
 		sig := <-signs
-		fmt.Println()
 		fmt.Println(sig)
 		done <- true
 	}()
