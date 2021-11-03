@@ -8,17 +8,17 @@ import (
 )
 
 func main() {
-	var sigs = make(chan os.Signal, 1)
+	var signs = make(chan os.Signal, 1)
 	var done = make(chan bool, 1)
 
 	// `signal.Notify`在给定的channel上面注册该channel
 	// 可以接受的信号
-	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+	signal.Notify(signs, syscall.SIGINT, syscall.SIGTERM)
 
 	// 这个goroutine阻塞等待信号的到来，当信号到来的时候，
 	// 输出该信号，然后通知程序可以结束了
 	go func() {
-		sig := <-sigs
+		sig := <-signs
 		fmt.Println()
 		fmt.Println(sig)
 		done <- true
