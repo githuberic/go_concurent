@@ -1,4 +1,4 @@
-package go_concurrent
+package once
 
 import (
 	"fmt"
@@ -7,14 +7,15 @@ import (
 	"time"
 )
 
-func TestVerifyV2(t *testing.T)  {
+func TestOnce(t *testing.T)  {
 	var once sync.Once
 	one := func() {
 		fmt.Println("just once")
 	}
 
 	for i := 0; i < 10; i++ {
-		go func(a int) {
+		go func(x int) {
+			fmt.Println("Value=",x)
 			once.Do(one)   // 只是被执行一次
 		}(i)
 	}
