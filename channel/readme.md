@@ -35,3 +35,6 @@ chan string          // 可以发送接收string
 chan<- struct{}      // 只能发送struct{}
 <-chan int           // 只能从chan接收int
 ```
+# Channel 使用场景
+
+[golang常见使用场景][https://github.com/Shitaibin/shitaibin.github.io/blob/hexo_resource/source/_posts/golang-channel-all-usage.md]reference-style
