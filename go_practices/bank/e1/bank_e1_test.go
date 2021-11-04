@@ -2,7 +2,7 @@ package e1_test
 
 import (
 	"fmt"
-	"go_concurent/example/bank/e1"
+	"go_concurent/go_practices/bank/e1"
 	"testing"
 )
 
