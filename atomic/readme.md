@@ -2,12 +2,13 @@
 
 CPU 提供了基础的原子操作，不过，不同架构的系统的原子操作是不一样的。
 
-#### 单核-原子操作
+### 单核-原子操作
+
 对于单处理器单核系统来说，如果一个操作是由一个 CPU 指令来实现的，那么它就是原子操作，比如它的 XCHG 和 INC 等指令。
 
 如果操作是基于多条指令来实现的，那么，执行的过程中可能会被中断，并执行上下文切换，这样的话，原子性的保证就被打破了，因为这个时候，操作可能只执行了一半。
 
-#### 多核-原子操作
+### 多核-原子操作
 
 在多处理器多核系统中，原子操作的实现就比较复杂了。
 
@@ -17,23 +18,21 @@ x86 架构中提供了指令前缀 LOCK，LOCK 保证了指令（比如 LOCK CMP
 
 不同的 CPU 架构提供的原子操作指令的方式也是不同的，比如对于多核的 MIPS 和 ARM，提供了 LL/SC（Load Link/Store Conditional）指令，可以帮助实现原子操作（ARMLL/SC 指令 LDREX 和 STREX）。
 
-#### golang-原子操作
+### golang-原子操作
 
 因为不同的 CPU 架构甚至不同的版本提供的原子操作的指令是不同的，所以，要用一种编程语言实现支持不同架构的原子操作是相当有难度的。
 
-不过，还好这些都不需要你操心，因为 Go 提供了一个通用的原子操作的 API，将更底层的不同的架构下的实现封装成 atomic 包，提供了修改类型的原子操作（atomic read-modify-write，RMW）
+不过，还好这些都不需要你操心，因为 Go 提供了一个通用的原子操作的 API，将更底层的不同的架构下的实现封装成 atomic 包，提供了修改类型的<b>原子操作（atomic read-modify-write，RMW）</b>
 
-和加载存储类型的原子操作（Load 和 Store）的 API。
-
-有的代码也会因为架构的不同而不同。有时看起来貌似一个操作是原子操作，但实际上，对于不同的架构来说，情况是不一样的。比如下面的代码的第 4 行，是将一个 64 位的值赋值给变量 i：
+和加载存储类型的原子操作（Load 和 Store）的 API。 有的代码也会因为架构的不同而不同。有时看起来貌似一个操作是原子操作，但实际上，对于不同的架构来说，情况是不一样的。比如下面的代码的第 4 行，是将一个 64 位的值赋值给变量 i：
 
 ```go
 
 const x int64 = 1 + 1<<33
 
 func main() {
-var i = x
-_ = i
+    var i = x
+    _ = i
 }
 ```
 
@@ -53,7 +52,7 @@ GOARCH=386 go tool objdump -gnu test.o 反编译试试）：
 
 相信泛型支持之后，atomic 的 API 会清爽很多。
 
-atomic 为了支持 int32、int64、uint32、uint64、uintptr、Pointer（Add 方法不支持）类型， 分别提供了 AddXXX、CompareAndSwapXXX、SwapXXX、LoadXXX、StoreXXX 等方法。
+<b>atomic 为了支持 int32、int64、uint32、uint64、uintptr、Pointer（Add 方法不支持）类型， 分别提供了 AddXXX、CompareAndSwapXXX、SwapXXX、LoadXXX、StoreXXX 等方法。</b>
 
 不过，你也不要担心，你只要记住了一种数据类型的方法的意义，其它数据类型的方法也是一样的。
 

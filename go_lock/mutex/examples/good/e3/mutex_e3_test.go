@@ -1,4 +1,4 @@
-package good
+package e3
 
 import (
 	"fmt"

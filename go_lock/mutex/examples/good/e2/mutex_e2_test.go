@@ -1,4 +1,4 @@
-package good
+package e2
 
 import (
 	"fmt"

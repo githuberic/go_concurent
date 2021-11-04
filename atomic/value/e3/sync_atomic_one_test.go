@@ -1,4 +1,4 @@
-package example
+package e3
 
 import (
 	"sync"
