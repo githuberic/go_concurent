@@ -8,7 +8,7 @@ import (
 /**
 all goroutines are asleep - deadlock!
 */
-func TestVerifyV2(t *testing.T) {
+func TestVerify(t *testing.T) {
 	naturals := make(chan int)
 	squares := make(chan int)
 

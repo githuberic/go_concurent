@@ -6,6 +6,7 @@ import (
 	"testing"
 )
 
+// 暂时废弃
 func TestVerifyOne(t *testing.T) {
 	type Map map[string]string
 

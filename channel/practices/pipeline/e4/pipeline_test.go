@@ -35,7 +35,7 @@ func printer(inCh <-chan int) {
 	}
 }
 
-func TestVerifyV4(t *testing.T) {
+func TestVerify(t *testing.T) {
 	in := counter(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 	outCh := squarer(in)
 

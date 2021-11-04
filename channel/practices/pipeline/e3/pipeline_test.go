@@ -25,7 +25,7 @@ func printer(in <-chan int) {
 	}
 }
 
-func TestVerifyE3(t *testing.T) {
+func TestVerify(t *testing.T) {
 	naturals := make(chan int)
 	squares := make(chan int)
 
