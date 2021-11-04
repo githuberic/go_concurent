@@ -1,4 +1,4 @@
-package atomic
+package e1
 
 import (
 	"fmt"
