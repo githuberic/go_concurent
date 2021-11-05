@@ -1,4 +1,4 @@
-package third_library
+package Jeffail
 
 import (
 	"log"

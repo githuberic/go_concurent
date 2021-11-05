@@ -1,13 +1,16 @@
-package main
+package goroutine_pool
 
 import (
 	"fmt"
+	"testing"
 	"time"
 )
 
 func worker(index int, jobCh <-chan int, retCh chan<- string) {
+	cnt := 0
 	for job := range jobCh {
-		ret := fmt.Sprintf("worker %d processed job: %d", index, job)
+		cnt++
+		ret := fmt.Sprintf("worker %d processed job: %d, it's the %dtd processed by me", index, job, cnt)
 		retCh <- ret
 	}
 }
@@ -31,9 +34,9 @@ func geneJob(count int) <-chan int {
 	return jobCh
 }
 
-func main() {
-	jobCh := geneJob(20)
-	retCh := make(chan string, 100)
+func TestWorkerPool(t *testing.T) {
+	jobCh := geneJob(10000)
+	retCh := make(chan string, 10000)
 	workerPool(5, jobCh, retCh)
 
 	time.Sleep(1 * time.Second)
