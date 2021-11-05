@@ -20,5 +20,5 @@ func TestVerify(t *testing.T)  {
 	for i := 0; i < 10; i++ {
 		go pool.Process(i)
 	}
-	time.Sleep(time.Second * 4)
+	time.Sleep(time.Second * 3)
 }

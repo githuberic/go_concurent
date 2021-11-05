@@ -8,6 +8,7 @@ import "fmt"
 type Pool struct {
 	// 工作协程的chan，无缓冲区（同步）
 	work chan func()
+
 	// 控制并发数，带缓冲区
 	sem chan struct{}
 }
@@ -36,6 +37,7 @@ func (pool *Pool) worker(task func()) {
 	// 重复利用开启的goroutine
 	for {
 		task()
+
 		// 消费者 (如果消费者没准备好，同步的channel就不会发送成功，也就是pool.work <-task 事件不会被触发
 		task = <-pool.work
 	}
