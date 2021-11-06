@@ -1,4 +1,4 @@
-package main
+package panjf2000
 
 import (
 	"fmt"
