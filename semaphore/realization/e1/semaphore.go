@@ -1,4 +1,4 @@
-package semaphore
+package e1
 
 import "sync"
 
@@ -14,6 +14,7 @@ func (*semaphore) NewSemaphore(capacity int) sync.Locker {
 		// 容量为1就变成了一个互斥锁
 		capacity = 1
 	}
+
 	return &semaphore{ch: make(chan struct{}, capacity)}
 }
 
