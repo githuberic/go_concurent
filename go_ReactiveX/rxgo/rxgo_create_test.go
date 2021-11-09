@@ -92,3 +92,13 @@ func TestRange(t *testing.T) {
 		fmt.Println(item.V)
 	}
 }
+
+func TestRepeat(t *testing.T)  {
+	observable := rxgo.Just(1, 2, 3)().Repeat(
+		3, rxgo.WithDuration(1*time.Second),
+	)
+
+	for item := range observable.Observe() {
+		fmt.Println(item.V)
+	}
+}
